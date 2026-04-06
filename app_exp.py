@@ -36,7 +36,7 @@ def init_gsheet():
         "https://spreadsheets.google.com/feeds",
         "https://www.googleapis.com/auth/drive"
     ]
-    creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name("/etc/secrets/credentials.json", scope)
     client = gspread.authorize(creds)
     return client.open(GSHEET_NAME).sheet1
 
